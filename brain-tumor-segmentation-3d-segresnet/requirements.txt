@@ -1,0 +1,80 @@
+# ============================================================================
+# CORE DEPENDENCIES — Brain Tumor Segmentation (3D SegResNet + MONAI)
+# ============================================================================
+
+# Deep Learning Framework
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Medical Imaging Framework (includes nibabel, SimpleITK, itk, etc.)
+monai[all]>=1.2.0
+
+# NIfTI file I/O
+nibabel>=5.0.0
+
+# Scientific Computing
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Data Analysis & Display
+pandas>=1.5.0
+
+# Visualisation
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Machine Learning & Metrics
+scikit-learn>=1.2.0
+
+# Progress Bars
+tqdm>=4.65.0
+
+# ============================================================================
+# JUPYTER NOTEBOOK (if running locally)
+# ============================================================================
+jupyter>=1.0.0
+notebook>=6.5.0
+ipykernel>=6.22.0
+ipywidgets>=8.0.0
+
+# ============================================================================
+# DEVELOPMENT & CODE QUALITY (optional)
+# ============================================================================
+pytest>=7.3.0
+black>=23.0.0
+flake8>=6.0.0
+
+# ============================================================================
+# INSTALLATION NOTES
+# ============================================================================
+
+# Option 1: Full install (including dev tools)
+#   pip install -r requirements.txt
+
+# Option 2: Core only
+#   pip install torch torchvision monai[all] nibabel numpy scipy matplotlib scikit-learn
+
+# Option 3: Kaggle (only MONAI needed — everything else is pre-installed)
+#   !pip install monai[all] -q
+
+# ============================================================================
+# HARDWARE REQUIREMENTS
+# ============================================================================
+
+# Minimum VRAM  : 16 GB  (batch=1, patch 128³, grad_accum=2)
+# Recommended   : 24–40 GB (batch=2, or larger patches)
+# System RAM    : 32 GB+ recommended
+# Disk Space    : ~15 GB BraTS 2021 extracted + ~2 GB libraries
+
+# ============================================================================
+# CUDA COMPATIBILITY
+# ============================================================================
+
+# CUDA 11.8:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+
+# CUDA 12.1:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+
+# CPU-only (not recommended — training extremely slow):
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
